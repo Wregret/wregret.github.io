@@ -87,22 +87,22 @@
 
 
 
-<meta name="description" content="title:Dijkstra算法简介与数学归纳证明算法基本思想此处先引用《计算机算法设计与分析（第四版）》（电子工业出版社）P-100中的介绍
+<meta name="description" content="算法基本思想此处先引用《计算机算法设计与分析（第四版）》（电子工业出版社）P-100中的介绍
 
-Dijkstra算法是解 单源最短路径问题 的一个贪心算法，其基本思想是： 设置顶点集合S并不断地做贪心选择来扩充这个集合。 一个顶点属于集合S当且仅当从源到该顶点的最短路径长度已知。初始时，S中仅含有源。设u是G中的某个顶点，把从源到且u中间只经过S">
+Dijkstra算法是解 单源最短路径问题 的一个贪心算法，其基本思想是： 设置顶点集合S并不断地做贪心选择来扩充这个集合。 一个顶点属于集合S当且仅当从源到该顶点的最短路径长度已知。初始时，S中仅含有源。设u是G中的某个顶点，把从源到且u中间只经过S中顶点的路称为从源到u的 特殊路径 ，并用 数组di">
 <meta property="og:type" content="article">
-<meta property="og:title" content="X.A.N.A">
+<meta property="og:title" content="Dijkstra算法简介与数学归纳证明">
 <meta property="og:url" content="http://yoursite.com/2017/03/24/Dijkstra算法简介与数学归纳证明/index.html">
 <meta property="og:site_name" content="X.A.N.A">
-<meta property="og:description" content="title:Dijkstra算法简介与数学归纳证明算法基本思想此处先引用《计算机算法设计与分析（第四版）》（电子工业出版社）P-100中的介绍
+<meta property="og:description" content="算法基本思想此处先引用《计算机算法设计与分析（第四版）》（电子工业出版社）P-100中的介绍
 
-Dijkstra算法是解 单源最短路径问题 的一个贪心算法，其基本思想是： 设置顶点集合S并不断地做贪心选择来扩充这个集合。 一个顶点属于集合S当且仅当从源到该顶点的最短路径长度已知。初始时，S中仅含有源。设u是G中的某个顶点，把从源到且u中间只经过S">
-<meta property="og:updated_time" content="2017-03-23T16:52:42.734Z">
+Dijkstra算法是解 单源最短路径问题 的一个贪心算法，其基本思想是： 设置顶点集合S并不断地做贪心选择来扩充这个集合。 一个顶点属于集合S当且仅当从源到该顶点的最短路径长度已知。初始时，S中仅含有源。设u是G中的某个顶点，把从源到且u中间只经过S中顶点的路称为从源到u的 特殊路径 ，并用 数组di">
+<meta property="og:updated_time" content="2017-03-23T16:53:29.165Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="X.A.N.A">
-<meta name="twitter:description" content="title:Dijkstra算法简介与数学归纳证明算法基本思想此处先引用《计算机算法设计与分析（第四版）》（电子工业出版社）P-100中的介绍
+<meta name="twitter:title" content="Dijkstra算法简介与数学归纳证明">
+<meta name="twitter:description" content="算法基本思想此处先引用《计算机算法设计与分析（第四版）》（电子工业出版社）P-100中的介绍
 
-Dijkstra算法是解 单源最短路径问题 的一个贪心算法，其基本思想是： 设置顶点集合S并不断地做贪心选择来扩充这个集合。 一个顶点属于集合S当且仅当从源到该顶点的最短路径长度已知。初始时，S中仅含有源。设u是G中的某个顶点，把从源到且u中间只经过S">
+Dijkstra算法是解 单源最短路径问题 的一个贪心算法，其基本思想是： 设置顶点集合S并不断地做贪心选择来扩充这个集合。 一个顶点属于集合S当且仅当从源到该顶点的最短路径长度已知。初始时，S中仅含有源。设u是G中的某个顶点，把从源到且u中间只经过S中顶点的路称为从源到u的 特殊路径 ，并用 数组di">
 
 
 
@@ -136,7 +136,7 @@ Dijkstra算法是解 单源最短路径问题 的一个贪心算法，其基本�
 
 
 
-  <title>  | X.A.N.A </title>
+  <title> Dijkstra算法简介与数学归纳证明 | X.A.N.A </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -276,7 +276,7 @@ Dijkstra算法是解 单源最短路径问题 的一个贪心算法，其基本�
             
             
               
-                
+                Dijkstra算法简介与数学归纳证明
               
             
           </h1>
@@ -291,7 +291,7 @@ Dijkstra算法是解 单源最短路径问题 的一个贪心算法，其基本�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T00:52:42+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T00:53:29+08:00">
                 2017-03-24
               </time>
             
@@ -327,8 +327,7 @@ Dijkstra算法是解 单源最短路径问题 的一个贪心算法，其基本�
       
 
       
-        <hr>
-<h2 id="title-Dijkstra算法简介与数学归纳证明"><a href="#title-Dijkstra算法简介与数学归纳证明" class="headerlink" title="title:Dijkstra算法简介与数学归纳证明"></a>title:Dijkstra算法简介与数学归纳证明</h2><h2 id="算法基本思想"><a href="#算法基本思想" class="headerlink" title="算法基本思想"></a>算法基本思想</h2><p>此处先引用《计算机算法设计与分析（第四版）》（电子工业出版社）P-100中的介绍</p>
+        <h2 id="算法基本思想"><a href="#算法基本思想" class="headerlink" title="算法基本思想"></a>算法基本思想</h2><p>此处先引用《计算机算法设计与分析（第四版）》（电子工业出版社）P-100中的介绍</p>
 <blockquote>
 <p>Dijkstra算法是解 <strong>单源最短路径问题</strong> 的一个贪心算法，其基本思想是： <strong>设置顶点集合S并不断地做贪心选择来扩充这个集合。</strong> 一个顶点属于集合S当且仅当从源到该顶点的最短路径长度已知。初始时，S中仅含有源。设u是G中的某个顶点，把从源到且u中间只经过S中顶点的路称为从源到u的 <strong>特殊路径</strong> ，并用 <strong>数组dist</strong> 记录当前每个顶点所对应的最短特殊路径的 <strong>长度</strong> 。Dijkstra算法每次从V-S中取出具有最短特殊路径长度的顶点u，将u添加到S中，同时对数组dist做必要的修改。一旦S包含了所有V中的顶点，dist就记录了从源到所有其他顶点之间的最短路径长度。</p>
 </blockquote>
@@ -526,7 +525,7 @@ Dijkstra算法是解 单源最短路径问题 的一个贪心算法，其基本�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#title-Dijkstra算法简介与数学归纳证明"><span class="nav-number">1.</span> <span class="nav-text">title:Dijkstra算法简介与数学归纳证明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法基本思想"><span class="nav-number">2.</span> <span class="nav-text">算法基本思想</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单说明"><span class="nav-number">2.2.</span> <span class="nav-text">简单说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法证明"><span class="nav-number">3.</span> <span class="nav-text">算法证明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#命题"><span class="nav-number">3.0.1.</span> <span class="nav-text">命题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#归纳奠基"><span class="nav-number">3.0.2.</span> <span class="nav-text">归纳奠基</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#归纳步骤"><span class="nav-number">3.0.3.</span> <span class="nav-text">归纳步骤</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法基本思想"><span class="nav-number">1.</span> <span class="nav-text">算法基本思想</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单说明"><span class="nav-number">1.2.</span> <span class="nav-text">简单说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法证明"><span class="nav-number">2.</span> <span class="nav-text">算法证明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#命题"><span class="nav-number">2.0.1.</span> <span class="nav-text">命题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#归纳奠基"><span class="nav-number">2.0.2.</span> <span class="nav-text">归纳奠基</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#归纳步骤"><span class="nav-number">2.0.3.</span> <span class="nav-text">归纳步骤</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
