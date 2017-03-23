@@ -345,7 +345,6 @@
 <li><strong>维护dist[]</strong>：选中所有具有特殊路径（即与S边界直连）的顶点如u1,u2,u3等，分别计算从源点按特殊路径到达它们的长度，并取各自的最小值存入dist[u1],dist[u2],dist[u3]中</li>
 <li><strong>扩充S</strong>：将dist[u1],dist[u2],dist[u3]中最小值对应的顶点纳入S中，如若dist[u2]&lt;dist[u1]&lt;dist[u3]，则u2纳入S中，dist[u2]的值为源点到u2的最短路径长度。dist[u1]和dist[u3]值暂存，但u1和u3的最短路径长度                                                                                                                                                                                                                                                                                                                                                                                              则需要在之后的循环中确定</li>
 </ol>
-<p>该算法的贪心选择体现为：选择具有最短特殊路径的顶点u（1.），从而确定源到u的最短路径长度dist[u]（2.）</p>
 <h2 id="算法证明"><a href="#算法证明" class="headerlink" title="算法证明"></a>算法证明</h2><p>Dijkstra算法可以导出单源最短路径问题的<strong>最优解</strong>，可以用数学归纳法证明这一点：</p>
 <h4 id="命题"><a href="#命题" class="headerlink" title="命题"></a>命题</h4><p>当算法进行到第k步时，对于S中每一个结点i，有</p>
 <blockquote>
