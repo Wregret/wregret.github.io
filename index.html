@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="author" content="John Doe">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Hexo</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-03-24T00:04:45.498Z"><a href="/2017/03/24/Dijkstra算法简介与数学归纳证明/">2017-03-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/03/24/Dijkstra算法简介与数学归纳证明/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="算法基本思想"><a href="#算法基本思想" class="headerlink" title="算法基本思想"></a>算法基本思想</h2><p>此处先引用《计算机算法设计与分析（第四版）》（电子工业出版社）P-100中的介绍</p>
+<blockquote>
+<p>Dijkstra算法是解 <strong>单源最短路径问题</strong> 的一个贪心算法，其基本思想是： <strong>设置顶点集合S并不断地做贪心选择来扩充这个集合。</strong> 一个顶点属于集合S当且仅当从源到该顶点的最短路径长度已知。初始时，S中仅含有源。设u是G中的某个顶点，把从源到且u中间只经过S中顶点的路称为从源到u的 <strong>特殊路径</strong> ，并用 <strong>数组dist</strong> 记录当前每个顶点所对应的最短特殊路径的 <strong>长度</strong> 。Dijkstra算法每次从V-S中取出具有最短特殊路径长度的顶点u，将u添加到S中，同时对数组dist做必要的修改。一旦S包含了所有V中的顶点，dist就记录了从源到所有其他顶点之间的最短路径长度。</p>
+</blockquote>
+<p>###定义</p>
+<ul>
+<li>G：无向图</li>
+<li>V：无向图中的顶点集合</li>
+<li>v：顶点</li>
+<li>u：G中某个还未被归入S的点</li>
+<li>S：一个顶点集合，集合中所有顶点到源点的最短路径长度都已知</li>
+<li>dist[]：记录所有顶点最短特殊路径长度的数组，当算法执行完毕后，该表将记录有所有顶点到源点的最短路径长度</li>
+<li>特殊路径：从源点出发，只经过S中的点，到达u的路径。形象地说，就是u点与S集合边界的<strong>直连</strong>路径</li>
+</ul>
+<p>###简单说明<br>根据S的定义，我们只需要从初始情况（S中仅包含源点）开始，不断扩充S，直到它包含图G中的所有顶点时，所有顶点的单源最短路径长度就已知了。那么接下来的问题就是如何扩充S。扩充S的过程为循环执行以下两个步骤的过程：</p>
+<ol>
+<li><strong>维护dist[]</strong>：选中所有具有特殊路径（即与S边界直连）的顶点如u1,u2,u3等，分别计算从源点按特殊路径到达它们的长度，并取各自的最小值存入dist[u1],dist[u2],dist[u3]中</li>
+<li><strong>扩充S</strong>：将dist[u1],dist[u2],dist[u3]中最小值对应的顶点纳入S中，如若dist[u2]&lt;dist[u1]&lt;dist[u3]，则u2纳入S中，dist[u2]的值为源点到u2的最短路径长度。dist[u1]和dist[u3]值暂存，但u1和u3的最短路径长度                                                                                                                                                                                                                                                                                                                                                                                              则需要在之后的循环中确定</li>
+</ol>
+<p>该算法的贪心选择体现为：选择具有最短特殊路径的顶点u（1.），从而确定源到u的最短路径长度dist[u]（2.）</p>
+<h2 id="算法证明"><a href="#算法证明" class="headerlink" title="算法证明"></a>算法证明</h2><p>Dijkstra算法可以导出单源最短路径问题的<strong>最优解</strong>，可以用数学归纳法证明这一点：</p>
+<p>####命题<br>当算法进行到第k步时，对于S中每一个结点i，有</p>
+<blockquote>
+<p>dist[i] = short[i]</p>
+</blockquote>
+<ul>
+<li>short[]：存有每个顶点到源点的最短距离</li>
+<li>s：源点<br>####归纳奠基<br>k = 1, S = {s}, dist[s] = short[s] = 0<br>####归纳步骤<br>假设命题对k为真，考虑k+1步算法中选择了顶点v加入S，需要证明</li>
+</ul>
+<blockquote>
+<p>dist[v] = short[v]</p>
+</blockquote>
+<p>到这里我们先停一下，回顾一下此时dist[v]是怎么得到的：</p>
+<ul>
+<li><p>首先，dist[v]是所有v的特殊路径的最短长度</p>
+</li>
+<li><p>其次，v是第k+1步中特殊路径长度最短的顶点</p>
+</li>
+</ul>
+<p>现在我们用使用反证法：</p>
+<p>假设有一条路径为S-&gt;x-&gt;…-&gt;-&gt;v（v的非特殊路径），且该路径长度小于dist[v]，那么必然有dist[x] &lt; dist[v]，然而根据算法我们选择的是顶点v加入S，即dist[v] &lt; dist[x]，矛盾。因此假设错误，不存在S-&gt;v以外的路径，使得v的单源路径长度最短。因此dist[v] = short[v]</p>
+<p>得证。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-12-11T12:48:52.000Z"><a href="/2016/12/11/first/">2016-12-11</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/12/11/first/">first</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="this-is-my-first-post"><a href="#this-is-my-first-post" class="headerlink" title="this is my first post"></a>this is my first post</h1>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-12-11T12:27:52.446Z"><a href="/2016/12/11/hello-world/">2016-12-11</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/12/11/hello-world/">Hello World</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+<nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav></div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2017 John Doe
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
