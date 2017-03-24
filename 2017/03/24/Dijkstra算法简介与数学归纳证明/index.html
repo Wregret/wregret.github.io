@@ -5,12 +5,22 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="算法基本思想此处先引用《计算机算法设计与分析（第四版）》（电子工业出版社）P-100中的介绍
+
+Dijkstra算法是解 单源最短路径问题 的一个贪心算法，其基本思想是： 设置顶点集合S并不断地做贪心选择来扩充这个集合。 一个顶点属于集合S当且仅当从源到该顶点的最短路径长度已知。初始时，S中仅含有源。设u是G中的某个顶点，把从源到且u中间只经过S中顶点的路称为从源到u的 特殊路径 ，并用 数组di">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/03/24/Dijkstra算法简介与数学归纳证明/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="算法基本思想此处先引用《计算机算法设计与分析（第四版）》（电子工业出版社）P-100中的介绍
+
+Dijkstra算法是解 单源最短路径问题 的一个贪心算法，其基本思想是： 设置顶点集合S并不断地做贪心选择来扩充这个集合。 一个顶点属于集合S当且仅当从源到该顶点的最短路径长度已知。初始时，S中仅含有源。设u是G中的某个顶点，把从源到且u中间只经过S中顶点的路称为从源到u的 特殊路径 ，并用 数组di">
+<meta property="og:updated_time" content="2017-03-23T13:35:14.726Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="算法基本思想此处先引用《计算机算法设计与分析（第四版）》（电子工业出版社）P-100中的介绍
+
+Dijkstra算法是解 单源最短路径问题 的一个贪心算法，其基本思想是： 设置顶点集合S并不断地做贪心选择来扩充这个集合。 一个顶点属于集合S当且仅当从源到该顶点的最短路径长度已知。初始时，S中仅含有源。设u是G中的某个顶点，把从源到且u中间只经过S中顶点的路称为从源到u的 特殊路径 ，并用 数组di">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,9 +69,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Dijkstra算法简介与数学归纳证明" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Dijkstra算法简介与数学归纳证明" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/03/24/Dijkstra算法简介与数学归纳证明/" class="article-date">
   <time datetime="2017-03-24T00:04:45.498Z" itemprop="datePublished">2017-03-24</time>
@@ -125,91 +133,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-first" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/11/first/" class="article-date">
-  <time datetime="2016-12-11T12:48:52.000Z" itemprop="datePublished">2016-12-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/11/first/">first</a>
-    </h1>
+    <a href="/2016/12/11/first/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">first</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="this-is-my-first-post"><a href="#this-is-my-first-post" class="headerlink" title="this is my first post"></a>this is my first post</h1>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/11/first/" data-id="ciwkncmi10002kpjrfpp0mrqq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/11/hello-world/" class="article-date">
-  <time datetime="2016-12-11T12:27:52.446Z" itemprop="datePublished">2016-12-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/11/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/11/hello-world/" data-id="ciwkmqjqy0000kpjrpq1l9tmv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         
